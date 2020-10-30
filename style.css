@@ -1,0 +1,91 @@
+:root {
+    --dot-size: 2rem;
+}
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    animation: 2s fade-in infinite;
+}
+
+.dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background: red;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.wandering {
+    animation: 9s wandering infinite; 
+}
+
+.side-tab {
+    position: fixed;
+    left: -10rem;
+    bottom: 4rem; 
+    background-color: burlywood;
+    width: 12rem;
+    padding: 1rem;
+    transition: left 300ms;
+}
+
+.side-tab:hover {
+    left: 0;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes wandering {
+    0% {
+        top: 0%;
+        left: 0%; 
+        background: red;
+    }
+    25% {
+        top: 0%;
+        left: calc(100% - var(--dot-size));
+        background: rebeccapurple;
+    }   
+    50% {
+        top: calc(100% - var(--dot-size)); 
+        left: calc(100% - var(--dot-size));
+        background: orange;
+    }
+    75% {
+        top: calc(100% - var(--dot-size)); 
+        left: 0;
+        background: yellow;
+    }
+    100% {
+        top: 0;
+        left: 0; 
+    }
+
+
+}
